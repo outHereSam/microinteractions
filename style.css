@@ -110,18 +110,20 @@ body {
 
 .refresh-component {
   width: 100%;
-  height: 20vh;
+  height: 420px;
   background: black;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
+  margin-top: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 .rf-container {
   width: 60%;
-  height: 70px;
+  height: 115px;
   border: 2px solid var(--border-color);
   border-radius: 30px;
   outline: none;
@@ -137,6 +139,18 @@ body {
   color: var(--text-color);
   line-height: 20px;
 }
+
+
+.fadeinQuote{
+  animation: fadeinQuote .5s ease-in-out;
+}
+
+.fadeupQuote{
+  animation-name: fadeupQuote;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+}
+
 .rf-quote {
   font-size: 17px;
 }
@@ -146,8 +160,8 @@ body {
 }
 
 .rf-circle {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   background: var(--refresh-btn-color);
   border-radius: 50%;
   outline: none;
@@ -155,20 +169,29 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -10px;
-  right: -10px;
+  bottom: -15px;
+  right: -15px;
   transition: .2s;
   cursor: pointer;
 }
 .rf-circle:hover {
   scale: 1.05;
 }
+.rf-circle:active {
+  scale: .95;
+}
 
 .rf-refresh-btn {
-  font-size: 20px;
+  font-size: 25px;
   color: var(--black);
-  animation: refreshrotation 1s infinite; 
-  transition: .2s;
+  transition: transform 0.2s ease-in-out;
+}
+.togglerefreshanimation {
+  font-size: 25px;
+  color: var(--black);
+  animation-name: refreshrotation;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes refreshrotation {
@@ -180,13 +203,28 @@ body {
   }
 }
 
-/* @keyframes circlescale {
+@keyframes fadeinQuote {
   from {
-    transform: scale(1);
+    transform: translateY(150%);
+    opacity: 0;
   }
   to {
-    transform: scale(.95);
+    transform: translateY(0%);
+    opacity: 1;
   }
-} */
+}
+
+
+@keyframes fadeupQuote {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 /********** Refresh styles end here  *********/
 
