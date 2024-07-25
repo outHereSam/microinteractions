@@ -23,7 +23,9 @@ loadSelect.addEventListener('change', function() {
 // Event listener for when the load button is clicked
 loadBtn.addEventListener('click', function() {
   // Hide button
-  this.style.display = 'none';
+//   this.style.display = 'none';
+this.classList.remove('show')
+
 
   // Show the loading indicator based on the selected value
   const selectedValue = loadSelect.value;
@@ -38,7 +40,7 @@ loadBtn.addEventListener('click', function() {
   // Simulate loading process 
   setTimeout(() => {
     // Show button again
-    this.style.display = 'inline-block';
+    // this.style.display = 'inline-block';
     
     // Hide loading indicators
     hideAllIndicators();
