@@ -6,11 +6,27 @@
     <title>Microinteractions</title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <script src="./main.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="main-container">
       <!-- Toggle Component -->
       <div class="toggle-component">Toggle component goes here</div>
+      <div class="toggle-component">
+        <div class="toggle-container">
+          <label class="switch">
+            <input type="checkbox" class="checkbox" />
+            <span class="slider"></span>
+            <span class="crescent"></span>
+          </label>
+        </div>
+      </div>
 
       <!-- form-component -->
       <div class="form-component">
@@ -21,10 +37,22 @@
           </div>
           <button type="submit" class="form-button">Subscribe</button>
         </form>
-        <div id="thank-you" class="hidden thank-you">Thank you for subscribing</div>
+        <div id="thank-you" class="hidden thank-you">
+          Thank you for subscribing
+        </div>
+      </div>
+
+      <!-- Refresh Component -->
+      <div class="refresh-component">
+        <div class="rf-container">
+          <p class="rf-quote">A word to the wise is in the North</p>
+          <span class="rf-span">~ Sun Tsu</span>
+          <div class="rf-circle">
+            <i class="fa-solid fa-arrows-rotate rf-refresh-btn"></i>
+          </div>
+        </div>
       </div>
     </div>
-
     <script src="./main.js"></script>
   </body>
 </html>
