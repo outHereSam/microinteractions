@@ -4,10 +4,96 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+}
+
 .main-container {
-  border: solid 1px pink;
+  /* border: solid 1px pink; */
   max-width: 620px;
   height: 100%;
-  padding: 60px 30px;
-  margin: 0 auto;
+  padding: 30px 30px;
+  margin: 120px auto;
+}
+
+/* Toggle Component Styles */
+.toggle-component {
+  /* border: solid 1px tomato; */
+  height: 420px;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-container {
+  /* border: solid 1px pink; */
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 112px;
+  height: 57px;
+}
+
+.switch:hover .slider {
+  background-color: #202042;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0d0d18;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+  /* z-index: 4; */
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 45px;
+  width: 45px;
+  left: 6px;
+  bottom: 6px;
+  background-color: rgb(234, 234, 234);
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.slider::after {
+  position: absolute;
+  content: "";
+  height: 45px;
+  width: 45px;
+  left: 6px;
+  bottom: 6px;
+  background-color: rgb(234, 234, 234);
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch input:checked + .slider {
+  background-color: rgb(234, 234, 234);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(55px);
+}
+
+.switch input:checked + .slider::after {
+  transform: translateX(35px);
+}
+
+.switch input:checked + .slider::before {
+  background-color: #0d0d18;
 }
