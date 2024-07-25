@@ -9,7 +9,10 @@
 
     <script src="./main.js" defer></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="main-container">
@@ -21,6 +24,20 @@
             <span class="slider"></span>
             <span class="crescent"></span>
           </label>
+        </div>
+      </div>
+
+      <!-- form-component -->
+      <div class="form-component">
+        <form action="" class="form" id="form">
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" />
+          </div>
+          <button type="submit" class="form-button">Subscribe</button>
+        </form>
+        <div id="thank-you" class="hidden thank-you">
+          Thank you for subscribing
         </div>
       </div>
 
@@ -37,5 +54,6 @@
         </div>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
