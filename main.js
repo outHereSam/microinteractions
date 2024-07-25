@@ -14,7 +14,7 @@ loadSelect.addEventListener('change', function() {
   loadSelect.style.opacity = '0';
   
   // Display load button
-  loadBtn.classList.add('show');
+  loadBtn.classList.toggle('hidden')
 
   // Hide all indicators first
   hideAllIndicators();
@@ -23,8 +23,7 @@ loadSelect.addEventListener('change', function() {
 // Event listener for when the load button is clicked
 loadBtn.addEventListener('click', function() {
   // Hide button
-//   this.style.display = 'none';
-this.classList.remove('show')
+  this.classList.toggle('hidden')
 
 
   // Show the loading indicator based on the selected value
