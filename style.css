@@ -13,6 +13,13 @@
 }
 
 /* form component styles */
+.form-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 30rem;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -20,6 +27,10 @@
   padding: 20px;
   gap: 20px;
   width: 20rem;
+  padding: 2rem;
+  border: 3px solid #ccc;
+  background-color: #fefefe;
+  border-radius: 10px;
 }
 
 .form-group {
@@ -46,6 +57,8 @@ input[type="email"] {
 
 input[type="email"]:focus {
   border: 2px solid #007bff;
+  background-color: #f0f8ff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .form-button {
@@ -57,9 +70,9 @@ input[type="email"]:focus {
   cursor: pointer;
   position: relative;
   border-radius: 10px;
-  animation: moveInBottom 2s ease 3s;
+  animation: moveInBottom 2s ease;
   animation-fill-mode: backwards;
-  transition: all 0.4s;
+  transition: all 0.2s;
 }
 
 .form-button:hover {
@@ -108,7 +121,7 @@ input[type="email"]:focus {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(35px);
+    transform: translateY(15px);
   }
   100% {
     opacity: 1;
@@ -116,6 +129,65 @@ input[type="email"]:focus {
   }
 }
 
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 input[type="email"].error {
   border: 2px solid #ff4d00;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(255, 77, 0, 0.5);
+  animation: shake 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.thank-you {
+  font-size: 2rem;
+  animation: moveInBottom 2s ease;
+}
+
+.animate {
+  animation: fadeOut 4s ease;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
 }
