@@ -9,7 +9,10 @@
 
     <script src="./main.js" defer></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="main-container">
@@ -24,16 +27,74 @@
         </div>
       </div>
 
+      <!-- form-component -->
+      <div class="form-component">
+        <form action="" class="form" id="form">
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" />
+          </div>
+          <button type="submit" class="form-button">Subscribe</button>
+        </form>
+        <div id="thank-you" class="hidden thank-you">
+          Thank you for subscribing
+        </div>
+      </div>
+
       <!-- Refresh Component -->
       <div class="refresh-component">
         <div class="rf-container">
-          <p class="rf-quote">A word to the wise is in the North</p>
-          <span class="rf-span">~ Sun Tsu</span>
+          <p class="rf-quote">Fresh for some refreshing quotes</p>
+          <span class="rf-span">~ Somebody</span>
+          <!-- <p class="rf-quotebehind">Fresh for some refreshing quotes</p>
+          <span class="rf-spanbehind">~ Somebody</span> -->
           <div class="rf-circle">
             <i class="fa-solid fa-arrows-rotate rf-refresh-btn"></i>
           </div>
         </div>
       </div>
+      <!-- Loading Component -->
+      <div class="loading-component">
+
+        <!-- select loading indicator -->
+        <select name="load" id="load-select">
+          <option value="">Select Loading Indicator</option>
+          <option value="loading-dots">Growing dots</option>
+          <option value="bouncing-dots">Bouncing dots</option>
+          <option value="spinner">Spinner</option>
+        </select>
+        
+        <!-- load button -->
+         <button class="loading-btn hidden">Load Content</button>
+
+         <!-- loading indicators -->
+
+         <!-- growing dots -->
+         <div id="loading-dots" class="loading-indicator">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+
+        <!-- bouncing dots -->
+         <div id="bouncing-dots" class="loading-indicator">
+          <div class="bouncing-dot"></div>
+          <div class="bouncing-dot"></div>
+          <div class="bouncing-dot"></div>
+         </div>
+
+         <!-- spinner -->
+          <div id="spinner" class="loading-indicator">
+            <div class="spinner"></div>
+          </div>
+
+          <!-- bars -->
+
+       </div>
     </div>
+    </div>
+    <script src="./main.js"></script>
   </body>
 </html>

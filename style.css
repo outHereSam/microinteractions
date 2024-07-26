@@ -1,11 +1,18 @@
-* {
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
+:root {
+  --black: #0a0a0a;
+  --border-color: #9b9b9b;
+  --refresh-btn-color: #d9d9d9;
+  --text-color: #ffffff;
 }
 
 .main-container {
@@ -27,9 +34,6 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-.toggle-container {
-  /* border: solid 1px pink; */
-}
 .switch {
   position: relative;
   display: inline-block;
@@ -99,29 +103,23 @@ body {
 }
 
 /********** Refresh styles start here  *********/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-:root {
-  --black: #0A0A0A;
-  --border-color: #9B9B9B;
-  --refresh-btn-color: #D9D9D9;
-  --text-color: #FFFFFF;
-}
 
 .refresh-component {
   width: 100%;
-  height: 20vh;
+  height: 420px;
   background: black;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
+  margin-top: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 .rf-container {
   width: 60%;
-  height: 70px;
+  height: 115px;
   border: 2px solid var(--border-color);
   border-radius: 30px;
   outline: none;
@@ -132,11 +130,24 @@ body {
   position: relative;
 }
 
-.rf-quote, .rf-span {
+.rf-quote,
+.rf-span {
   font-family: "Montserrat", sans-serif;
   color: var(--text-color);
   line-height: 20px;
 }
+
+
+.fadeinQuote{
+  animation: fadeinQuote .5s ease-in-out;
+}
+
+.fadeupQuote{
+  animation-name: fadeupQuote;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+}
+
 .rf-quote {
   font-size: 17px;
 }
@@ -146,8 +157,8 @@ body {
 }
 
 .rf-circle {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   background: var(--refresh-btn-color);
   border-radius: 50%;
   outline: none;
@@ -157,18 +168,30 @@ body {
   position: absolute;
   bottom: -10px;
   right: -10px;
-  transition: .2s;
+  transition: 0.2s;
+  bottom: -15px;
+  right: -15px;
   cursor: pointer;
 }
 .rf-circle:hover {
   scale: 1.05;
 }
+.rf-circle:active {
+  scale: .95;
+}
 
 .rf-refresh-btn {
-  font-size: 20px;
+  font-size: 25px;
   color: var(--black);
-  animation: refreshrotation 1s infinite; 
-  transition: .2s;
+  animation: refreshrotation 1s infinite;
+  transition: transform 0.2s ease-in-out;
+}
+.togglerefreshanimation {
+  font-size: 25px;
+  color: var(--black);
+  animation-name: refreshrotation;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out
 }
 
 @keyframes refreshrotation {
@@ -180,13 +203,374 @@ body {
   }
 }
 
-/* @keyframes circlescale {
+@keyframes fadeinQuote {
   from {
-    transform: scale(1);
+    transform: translateY(150%);
+    opacity: 0;
   }
   to {
-    transform: scale(.95);
+    transform: translateY(0%);
+    opacity: 1;
   }
-} */
+}
+
+
+@keyframes fadeupQuote {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 /********** Refresh styles end here  *********/
 
+/* form component styles */
+.form-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 30rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  width: 20rem;
+  padding: 2rem;
+  border: 3px solid #ccc;
+  background-color: #fefefe;
+  border-radius: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  /* margin-bottom: 20px; */
+}
+
+input[type="email"] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  background: none;
+  border-radius: 5px;
+  display: block;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input[type="email"]:focus {
+  border: 2px solid #007bff;
+  background-color: #f0f8ff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  animation: moveInBottom 2s ease;
+  animation-fill-mode: backwards;
+  transition: all 0.2s;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-button::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #0056b3;
+  border-radius: 10px;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.form-button:hover::after {
+  transform: scaleX(1.3) scaleY(1.5);
+  opacity: 0;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+input[type="email"].error {
+  border: 2px solid #ff4d00;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(255, 77, 0, 0.5);
+  animation: shake 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.thank-you {
+  font-size: 2rem;
+  animation: moveInBottom 2s ease;
+}
+
+.animate {
+  animation: fadeOut 4s ease;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+
+/* 
+=================
+LOADING COMPONENT
+================= */
+.loading-component {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px black;
+  position: relative;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+
+#load-select {
+  font-size: 1rem;
+  padding: 8px;
+  transition: opacity 0.3s ease;
+  border: 1px solid #007bff;
+}
+
+.loading-btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  cursor: pointer;
+   transform: translateX(100%);
+   animation: moveRight 0.6s ease-out forwards;
+}
+
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.loading-indicator {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+#loading-dots .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 2px;
+  background-color: #007bff;
+  border-radius: 50%;
+  animation: dotAnimation 1.0s infinite ease-in-out;
+}
+
+#loading-dots .dot:nth-child(1) {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  animation-delay: 0.1s;
+}
+#loading-dots .dot:nth-child(2) {
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  animation-delay: 0.2s;
+}
+#loading-dots .dot:nth-child(3) {
+  width: 12px;
+  height: 12px;
+  background-color: yellow;
+  animation-delay: 0.3s;
+}
+#loading-dots .dot:nth-child(4) {
+  width: 14px;
+  height: 14px;
+  background-color: lawngreen;
+  animation-delay: 0.4s;
+}
+#loading-dots .dot:nth-child(5) {
+  width: 16px;
+  height: 16px;
+  animation-delay: 0.5s;
+}
+
+@keyframes dotAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+
+#bouncing-dots .bouncing-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 2px;
+  background-color: #007bff;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+#bouncing-dots .bouncing-dot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#bouncing-dots .bouncing-dot:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#bouncing-dots .bouncing-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 
+==============
+SPINNER
+============== */
+.spinner {
+  border: 12px solid #e9e9e9; 
+  border-top: 12px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  margin:120px auto; 
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+/* 
+==================
+HOVERING EFFECT
+================== */
+.loading-btn:hover {
+  background-color: #0026ff;
+}
