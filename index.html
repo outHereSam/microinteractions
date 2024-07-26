@@ -53,6 +53,47 @@
           </div>
         </div>
       </div>
+      <!-- Loading Component -->
+      <div class="loading-component">
+
+        <!-- select loading indicator -->
+        <select name="load" id="load-select">
+          <option value="">Select Loading Indicator</option>
+          <option value="loading-dots">Growing dots</option>
+          <option value="bouncing-dots">Bouncing dots</option>
+          <option value="spinner">Spinner</option>
+        </select>
+        
+        <!-- load button -->
+         <button class="loading-btn hidden">Load Content</button>
+
+         <!-- loading indicators -->
+
+         <!-- growing dots -->
+         <div id="loading-dots" class="loading-indicator">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+
+        <!-- bouncing dots -->
+         <div id="bouncing-dots" class="loading-indicator">
+          <div class="bouncing-dot"></div>
+          <div class="bouncing-dot"></div>
+          <div class="bouncing-dot"></div>
+         </div>
+
+         <!-- spinner -->
+          <div id="spinner" class="loading-indicator">
+            <div class="spinner"></div>
+          </div>
+
+          <!-- bars -->
+
+       </div>
+    </div>
     </div>
     <script src="./main.js"></script>
   </body>
